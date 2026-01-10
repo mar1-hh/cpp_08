@@ -3,12 +3,15 @@
 int main()
 {
     Span sp = Span(5);
-    sp.addNumber(6);
-    sp.addNumber(3);
-    sp.addNumber(17);
-    sp.addNumber(9);
+
+    std::vector<int> test;
+    test.push_back(6);
+    test.push_back(3);
+    test.push_back(17);
+    test.push_back(9);
+    test.push_back(11);
+    sp.addNumber(test.begin(), test.end());
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
-    sp.addNumber(11);
     return 0;
 }

@@ -21,16 +21,27 @@ Span& Span::operator=(Span& obj)
 
 Span::~Span() {};
 
-void Span::addNumber(int n)
+int Span::addNumber(int n)
 {
     if (counter == size)
     {
         std::cout << "the vector is full" << std::endl;
-        return ;
+        return -1;
     }
     std::vector<int>::iterator it = std::lower_bound(numbers_vector.begin(), numbers_vector.end(), n);
     numbers_vector.insert(it, n);
     counter++;
+    return (0);
+}
+
+int Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+    for (std::vector<int>::iterator i = begin; i != end; i++)
+    {
+        if (addNumber(*i) == -1)
+            return (-1);
+    }
+    return (0);
 }
 
 int Span::shortestSpan()
