@@ -11,7 +11,11 @@ int main()
     test.push_back(9);
     test.push_back(11);
     sp.addNumber(test.begin(), test.end());
-    std::cout << sp.shortestSpan() << std::endl;
-    std::cout << sp.longestSpan() << std::endl;
+    int sh_sp = sp.shortestSpan();
+    int lo_sp = sp.longestSpan();
+    if (sh_sp != INT_MAX)
+        std::cout << sp.shortestSpan() << std::endl;
+    if (lo_sp != INT_MAX)
+        std::cout << sp.longestSpan() << std::endl;
     return 0;
 }

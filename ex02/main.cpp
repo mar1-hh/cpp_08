@@ -24,5 +24,11 @@ int main()
         ++it;
     }
     std::stack<int> s(mstack);
+
+    MutantStack<int> more_test;
+    more_test = mstack;
+    MutantStack<int>::iterator it_2;
+    for (it_2 = more_test.begin(); it_2 != more_test.end(); it_2++)
+        std::cout << *it_2 << std::endl;
     return (0);
 }

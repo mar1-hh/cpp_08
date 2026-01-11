@@ -10,6 +10,7 @@ template <typename T>
 MutantStack<T>& MutantStack<T>::operator=(MutantStack &obj)
 {
     std::stack<T>::operator=(obj);
+    return (*this);
 }
 
 template <typename T>
